@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:training/colors.dart' as color;
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -87,18 +85,57 @@ class _HomePageState extends State<HomePage> {
                   begin: Alignment.bottomLeft,
                   end: Alignment.centerRight,
                 ),
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(10),
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10),
                     topRight: Radius.circular(80)),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(5, 10),
+                    offset: const Offset(5, 10),
                     blurRadius: 20,
                     color: color.AppColor.gradientSecond.withOpacity(0.2),
                   )
                 ],
+              ),
+              child: Container(
+                padding: const EdgeInsets.only(
+                  top: 25,
+                  left: 20,
+                  right: 20,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Next Workout",
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: color.AppColor.homePageContainerTextSmall,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      "Legs Toning",
+                      style: TextStyle(
+                        fontSize: 25,
+                        color: color.AppColor.homePageContainerTextSmall,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      "and Glutes Workout",
+                      style: TextStyle(
+                        fontSize: 25,
+                        color: color.AppColor.homePageContainerTextSmall,
+                      ),
+                    )
+                  ],
+                ),
               ),
             )
           ],
